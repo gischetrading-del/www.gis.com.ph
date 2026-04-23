@@ -92,3 +92,7 @@ window.addEventListener('scroll', () => {
 
 
 
+//Bash-pangcheck ng update sa website 
+//git add .
+//git commit -m "test update"
+//git push origin main
