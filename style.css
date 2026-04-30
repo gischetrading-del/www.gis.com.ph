@@ -345,14 +345,14 @@ header .navbar { /* position of Home, About, Products, Parts & Services, contact
 
   .product-section .product-list .product-item .product-image{ 
    /*adjustment of the images */
-   width:100%;
-   max-width: 220px;
-    height: 160px; /* to make equal of the width and height of the element */
-    margin-bottom: 15px;
-    object-fit: contain; /* Controls how the image displays on the container */
-      display: block;
-    margin: 0 auto 15px;
-  }
+    width: 100%;
+  max-width: 220px;
+  height: 160px;
+
+  object-fit: contain;
+  display: block;
+  margin: 0 auto 15px;
+}
   
 
   .product-section .product-list .product-item .text{
