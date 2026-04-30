@@ -507,7 +507,7 @@ header .navbar { /* position of Home, About, Products, Parts & Services, contact
 
    /*Contact Us section styling */
    .contact-section{
-      padding: 30px 0 70px;
+       padding: 3% 0 2%; 
       background: var(--light-pink-color);
    }
 
