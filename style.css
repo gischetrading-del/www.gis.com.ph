@@ -208,7 +208,7 @@ header .navbar { /* position of Home, About, Products, Parts & Services, contact
 
 .hero-section .hero-details .description{
    max-width: 50%; /*lapad ng container */
-  margin: 24px 0 40px; /*top: 24px left: 0 right:0 bottom: 40px */
+  margin: 24px 0 30px; /*top: 24px left: 0 right:0 bottom: 40px */
    font-size: var(--font-size-m);
 }
 
