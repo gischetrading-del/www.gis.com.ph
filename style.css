@@ -440,35 +440,46 @@ header .navbar { /* position of Home, About, Products, Parts & Services, contact
    }
 
    /*Profile Section Styling */
-   .profile-section{
-      padding: 3% 0 2%; /*lapad ng between ng "wing van" at "our service" */
-      background: var(--medium-gray-color); /*lapad ng company profile sa taas */
-   }
+   .profile-section {
+  padding: 100px 20px;
+  display: flex;
+  justify-content: center;
+}
 
-   .profile-section .profile-list{
-      display: flex;
-      flex-wrap: wrap;
-      gap: 32px;
-   }
-   .profile-section .profile-list .profile-item{
-      overflow: hidden;
-      position: relative;
-      border-radius: var(--border-radius-s);
-      width: calc(100% / 2- 32px);
-   }
+.profile-box {
+  position: relative;
+  background: #fff;
+  max-width: 700px;
+  width: 100%;
+  padding: 80px 30px 30px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
 
-   .profile-section .profile-item .profile-image{ /*animation */
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-      transform: scale(1);
-      transition: transform 0.3s ease;
-      cursor: pointer;
-   }
-   .profile-section .profile-item:hover .profile-image{
-      transform: scale(1.1); /*image animation*/
-   }
+/* floating image */
+.profile-img {
+  position: absolute;
+  top: -60px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.profile-img img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 5px solid #fff;
+  object-fit: cover;
+}
+
+.profile-box h2 {
+  margin-top: 10px;
+}
+
+.profile-box p {
+  color: #555;
+}
 
    /*Contact Us section styling */
    .contact-section{
@@ -697,18 +708,9 @@ header .navbar { /* position of Home, About, Products, Parts & Services, contact
 
        /*Responsive media query code for max width 640px */
 @media screen and (max-width: 640px) { /* mobile view*/
-   .product-section .menu-list{
-      gap: 60px;
-   }
-
-   .product-section .product-list .product-item,
-   .profile-section .profile-list .profile-item{ /* mobile view*/
-      width: 100%;
-   }
    .service-section .slider-wrapper{ 
       margin: 0 0 30px;
    }
-
    .service-section .swiper-slide-button{
       display: none; /* no slider button if the page is not maximized */
    }
