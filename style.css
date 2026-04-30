@@ -295,9 +295,7 @@ header .navbar { /* position of Home, About, Products, Parts & Services, contact
    color: var(--primary-color); 
   } end of about section */
 
-  /*Products section styling */
-   .product-section{
-      
+  .product-section{
       position: relative;
       overflow: hidden;
    
@@ -308,9 +306,15 @@ header .navbar { /* position of Home, About, Products, Parts & Services, contact
       background-size: cover;
       background-repeat: no-repeat;
       background-attachment: scroll;
+       background-attachment: fixed;
    }
 
   .product-section .product-list {
+   /*display: flex;
+   flex-wrap: wrap;
+   gap: 30px;
+   justify-content: space-between; /*it adjust the alignment of the images 
+  }*/
    display: flex; /*pangscroll animation */
    gap: 30px;
    overflow-x: auto;
@@ -331,16 +335,12 @@ header .navbar { /* position of Home, About, Products, Parts & Services, contact
 }
 
 .product-section .product-list::-webkit-scrollbar {
-   height: 4px;
+   height: 8px;
 }
 
 .product-section .product-list::-webkit-scrollbar-thumb {
    background: var(--white-color);
    border-radius: 10px;
-}
-
-.product-item:hover {
- transition: transform 0.3s ease;
 }
 
 .product-item:hover {
