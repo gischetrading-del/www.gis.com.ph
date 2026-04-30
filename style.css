@@ -761,29 +761,19 @@ header .navbar { /* position of Home, About, Products, Parts & Services, contact
 }
 
 @media screen and (max-width: 1024px) {
-  .product-card {
-    flex: 0 0 240px;
-  }
-}
-
-/* MOBILE VIEW */
-@media screen and (max-width: 768px) {
-  .product-card {
-    flex: 0 0 200px;
-  }
-
-  .section-title {
-    font-size: 2rem;
-  }
-}
-
-/* SMALL MOBILE */
-@media screen and (max-width: 480px) {
-  .product-card {
-    flex: 0 0 170px;
-  }
-
   .product-card img {
-    height: 140px;
+    height: 130px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .product-card img {
+    height: 120px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .product-card img {
+    height: 110px;
   }
 }
