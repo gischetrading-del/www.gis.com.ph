@@ -708,14 +708,6 @@ header .navbar { /* position of Home, About, Products, Parts & Services, contact
       aspect-ratio: 1; /* it perfects the square of the image (1:1 ratio) 
    } */
 
-      .product-section .product-list .product-item{
-         width: calc(100% / 2 - 30px); /*image size of the images in our product section */
-      }
-
-      .product-section .product-list .product-item .product-image{
-         max-width: 200px; /* it adjusts when the webpage is in restore down mode */
-      }
-
 
       .contact-section .section-content{ /* it changes and fix the elements' position in the flex container */
          align-items: center;
