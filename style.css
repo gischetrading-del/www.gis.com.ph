@@ -585,7 +585,8 @@ header .navbar { /* position of Home, About, Products, Parts & Services, contact
    gap: 60px; 
   }
    .product-section .product-list .product-item {
-      width: calc(100% / 3 - 40px);
+       min-height: 320px;
+  justify-content: flex-start;
    }
 }
 
