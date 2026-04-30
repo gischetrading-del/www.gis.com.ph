@@ -94,7 +94,7 @@
 
  .section-content{ /*adjustment of the sides of the page */
    margin: 0 auto; /*sides */
-   padding: 0 20px; /*lapad sa baba */
+   padding: 0 10px; /*lapad sa baba */
    max-width: var(--site-max-width);
    overflow:visible;
  }
