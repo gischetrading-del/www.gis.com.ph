@@ -318,7 +318,7 @@ header .navbar { /* position of Home, About, Products, Parts & Services, contact
 .product-slider {
   width: 100%;
   overflow: hidden;
-  padding: 80px 0;
+  padding: 50px 0;
 }
 
 /* MOVING TRACK */
