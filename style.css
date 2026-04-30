@@ -333,10 +333,10 @@ header .navbar { /* position of Home, About, Products, Parts & Services, contact
 
 /* PRODUCT CARD */
 .product-card {
-  flex: 0 0 260px;
+  flex: 0 0 320px;
   background: rgba(0, 0, 0, 0.6);
   border-radius: 15px;
-  padding: 12px;
+  padding: 15px;
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -344,7 +344,7 @@ header .navbar { /* position of Home, About, Products, Parts & Services, contact
 /* IMAGE */
 .product-card img {
   width: 100%;
-  height: 180px;
+  height: 260px;
   object-fit: cover;
   border-radius: 10px;
   transition: transform 0.3s ease;
