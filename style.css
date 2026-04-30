@@ -297,8 +297,6 @@ header .navbar { /* position of Home, About, Products, Parts & Services, contact
 
   /*Products section styling */
    .product-section{
-      width: 100%;
-  min-height: 100vh;
       
       position: relative;
       overflow: hidden;
@@ -313,11 +311,11 @@ header .navbar { /* position of Home, About, Products, Parts & Services, contact
    }
 
   .product-section .product-list {
-    display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 30px;
-  width: 100%;
-  padding: 40px 5%;
+   display: flex; /*pangscroll animation */
+   gap: 30px;
+   overflow-x: auto;
+   scroll-behavior: smooth;
+   padding-bottom: 10px; 
 }
 
     .product-section .product-list .product-item { /*alignment of products and texts */
