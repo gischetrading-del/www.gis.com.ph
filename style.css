@@ -330,7 +330,7 @@ header .navbar { /* position of Home, About, Products, Parts & Services, contact
 }
 
 .product-section .product-list::-webkit-scrollbar {
-   height: 8px;
+   height: 4px;
 }
 
 .product-section .product-list::-webkit-scrollbar-thumb {
@@ -445,7 +445,7 @@ header .navbar { /* position of Home, About, Products, Parts & Services, contact
    }
 
 .profile-gallery {
-  column-count: 4;
+  column-count: 3;
   column-gap: 15px;
 }
 
