@@ -393,7 +393,7 @@ header .navbar { /* position of Home, About, Products, Parts & Services, contact
   }
 
    .service-section .service .service-image {
-      width: 100%;
+      width: 60%;
       height: 40%;
       object-fit: cover;
       margin-bottom: 5px;
