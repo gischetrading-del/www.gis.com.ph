@@ -457,7 +457,7 @@ header .navbar { /* position of Home, About, Products, Parts & Services, contact
 
    .profile-section{
        min-height: 100vh;
-      padding: 3% 0 2%; /*lapad ng between ng "wing van" at "our service" */
+/*lapad ng between ng "wing van" at "our service" */
       background: var(--medium-gray-color); /*lapad ng company profile sa taas */
    }
 
@@ -509,7 +509,6 @@ header .navbar { /* position of Home, About, Products, Parts & Services, contact
    /*Contact Us section styling */
    .contact-section{
        min-height: 100vh;
-       padding: 3% 0 2%; 
       background: var(--light-pink-color);
    }
 
