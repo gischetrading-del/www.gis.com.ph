@@ -300,7 +300,7 @@ header .navbar { /* position of Home, About, Products, Parts & Services, contact
       position: relative;
       overflow: hidden;
    
-      padding: 3% 0 2%; /*lapad ng between ng "wing van" at "our service" */
+      padding: 10% 0 10%; /*lapad ng between ng "wing van" at "our service" */
       color:var(--white-color); /*text color */
        background-image: url('images/bg.jpg');
        background-position: center;
