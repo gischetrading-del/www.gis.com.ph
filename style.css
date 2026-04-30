@@ -438,6 +438,13 @@ header .navbar { /* position of Home, About, Products, Parts & Services, contact
 
    /*Profile Section Styling */
    /* Pinterest / Masonry */
+   
+   .profile-section{
+      padding: 3% 0 2%; /*lapad ng between ng "wing van" at "our service" */
+      background: var(--medium-gray-color); /*lapad ng company profile sa taas */
+   }
+
+
 .profile-gallery {
   column-count: 3;
   column-gap: 15px;
