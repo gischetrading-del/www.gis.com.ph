@@ -296,7 +296,7 @@ header .navbar { /* position of Home, About, Products, Parts & Services, contact
 
   /*Products section styling */
    .product-section {
-   padding: 3% 0 2%;
+    min-height: 100vh;
   position: relative;
   overflow: hidden;
   padding: 3% 0 2%;
@@ -383,6 +383,7 @@ header .navbar { /* position of Home, About, Products, Parts & Services, contact
 
   /*Service section styling */
   .service-section {
+    min-height: 100vh;
    position: relative;
       overflow: hidden;
       padding: 3% 0 2%; /*lapad ng between ng "wing van" at "our service" */
@@ -455,6 +456,7 @@ header .navbar { /* position of Home, About, Products, Parts & Services, contact
    /* Pinterest / Masonry */
 
    .profile-section{
+       min-height: 100vh;
       padding: 3% 0 2%; /*lapad ng between ng "wing van" at "our service" */
       background: var(--medium-gray-color); /*lapad ng company profile sa taas */
    }
@@ -506,6 +508,7 @@ header .navbar { /* position of Home, About, Products, Parts & Services, contact
 
    /*Contact Us section styling */
    .contact-section{
+       min-height: 100vh;
        padding: 3% 0 2%; 
       background: var(--light-pink-color);
    }
