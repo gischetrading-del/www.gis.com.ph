@@ -343,13 +343,9 @@ header .navbar { /* position of Home, About, Products, Parts & Services, contact
  transition: transform 0.3s ease;
 }
 
-.product-item:hover {
-  transform: translateY(-10px);
-}
-
   .product-section .product-list .product-item .product-image{ 
    /*adjustment of the images */
-   max-width: 100%;
+   max-width: 80%;
     aspect-ratio: 4/3; /* to make equal of the width and height of the element */
     margin-bottom: 15px;
     object-fit: contain; /* Controls how the image displays on the container */
