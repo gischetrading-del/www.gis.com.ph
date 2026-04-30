@@ -594,14 +594,7 @@ header .navbar { /* position of Home, About, Products, Parts & Services, contact
     }
 
     /*Responsive media query code for max width 1024px */
-  @media screen and (max-width: 1024px) { /*text's width */
-  .product-section .product-list {
-   gap: 60px; 
-  }
-   .product-section .product-list .product-item {
-      width: calc(100% / 3 - 40px);
-   }
-}
+ 
 
    /*Responsive media query code for max width 900px */
 @media screen and (max-width: 900px){
