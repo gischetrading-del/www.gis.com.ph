@@ -307,7 +307,6 @@ header .navbar { /* position of Home, About, Products, Parts & Services, contact
       background-size: cover;
       background-repeat: no-repeat;
       background-attachment: scroll;
-      background-attachment: fixed;
    }
 
   .product-section .product-list {
@@ -343,17 +342,17 @@ header .navbar { /* position of Home, About, Products, Parts & Services, contact
  transition: transform 0.3s ease;
 }
 
+.product-item:hover {
+  transform: translateY(-10px);
+}
+
   .product-section .product-list .product-item .product-image{ 
    /*adjustment of the images */
-    width: 100%;
-  max-width: 220px;
-  height: 160px;
-
-  object-fit: contain;
-  display: block;
-  margin: 0 auto 15px;
-}
-  
+    max-width: 100%;
+    height: 100%; /* to make equal of the width and height of the element */
+    margin-bottom: 10px;
+    object-fit: contain; /* Controls how the image displays on the container */
+  }
 
   .product-section .product-list .product-item .text{
    margin: 10px 0; /*size of the text's margin */
@@ -585,8 +584,7 @@ header .navbar { /* position of Home, About, Products, Parts & Services, contact
    gap: 60px; 
   }
    .product-section .product-list .product-item {
-       min-height: 320px;
-  justify-content: flex-start;
+      width: calc(100% / 3 - 40px);
    }
 }
 
