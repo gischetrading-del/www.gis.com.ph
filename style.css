@@ -331,8 +331,8 @@ header .navbar { /* position of Home, About, Products, Parts & Services, contact
 
 /* PRODUCT CARD */
 .product-card {
-  flex: 1 1 calc(50% - 20px); /* 🔥 2 per row */
-  max-width: calc(50% - 20px);
+  flex: 100%; /* 🔥 2 per row */
+  max-width: 100%;1
   display: flex;
   flex-direction: column;
   background: rgba(0, 0, 0, 0.6);
