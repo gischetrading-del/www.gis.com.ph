@@ -163,6 +163,7 @@ header .navbar { /* position of Home, About, Products, Parts & Services, contact
 
 /*hero section styling */
 .hero-section {
+   min-height: 100vh;
    position: relative;   /* IMPORTANT para gumana ang overlay */
    overflow: hidden;      /*para ivoid ang excess space */
    padding-top: 250px; /*for the adjustment of the text*/
