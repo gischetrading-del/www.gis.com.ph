@@ -296,69 +296,71 @@ header .navbar { /* position of Home, About, Products, Parts & Services, contact
   } end of about section */
 
   /*Products section styling */
-  .product-section {
-  position: relative;
-  overflow: hidden;
+   .product-section{
+      position: relative;
+      overflow: hidden;
+   
+      padding: 3% 0 2%; /*lapad ng between ng "wing van" at "our service" */
+      color:var(--white-color); /*text color */
+       background-image: url('images/bg.jpg');
+       background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: scroll;
+      background-attachment: fixed;
+   }
 
-  padding: 3% 0 2%;
-  color: var(--white-color);
-
-  background-image: url('images/bg.jpg');
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed; /* FIXED: single line only */
+  .product-section .product-list {
+   display: flex; /*pangscroll animation */
+   gap: 30px;
+   overflow-x: auto;
+   scroll-behavior: smooth;
+   padding-bottom: 10px; 
 }
 
-/* LIST CONTAINER */
-.product-section .product-list {
-  display: flex;
-  gap: 30px;
-
-  overflow-x: auto;
-  scroll-behavior: smooth;
-
-  padding-bottom: 15px;
+    .product-section .product-list .product-item { /*alignment of products and texts */
+   /*display: flex;
+   align-items: center;
+   text-align: center;
+   flex-direction: column;
+   justify-content: space-between;
+   width: calc(100% / 3 - 20px);
+  } */
+   flex: 0 0 auto;
+   min-width: 250px;
 }
 
-/* SCROLL ITEM */
-.product-section .product-list .product-item {
-  flex: 0 0 auto;
-  min-width: 250px;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-
-  padding: 15px;
-  border-radius: 15px;
-
-  transition: transform 0.3s ease;
+.product-section .product-list::-webkit-scrollbar {
+   height: 8px;
 }
 
-/* HOVER FIX */
-.product-section .product-list .product-item:hover {
-  transform: translateY(-8px);
+.product-section .product-list::-webkit-scrollbar-thumb {
+   background: var(--white-color);
+   border-radius: 10px;
 }
 
-/* IMAGE FIX */
-.product-section .product-list .product-item .product-image {
-  width: 100%;
-  max-width: 220px;
-
-  aspect-ratio: 4/3;
-  object-fit: contain;
-
-  margin-bottom: 15px;
+.product-item:hover {
+ transition: transform 0.3s ease;
 }
 
-/* TEXT */
-.product-section .product-list .product-item .text {
-  margin: 10px 0;
-  font-size: var(--font-size-l);
-  font-weight: var(--font-weight-medium);
-}
+  .product-section .product-list .product-item .product-image{ 
+   /*adjustment of the images */
+   max-width: 100%;
+    aspect-ratio: 4/3; /* to make equal of the width and height of the element */
+    margin-bottom: 15px;
+    object-fit: contain; /* Controls how the image displays on the container */
+  }
+
+  .product-section .product-list .product-item .text{
+   margin: 10px 0; /*size of the text's margin */
+   font-size: var(--font-size-l); /* font size of the text */
+   font-weight: var(--font-weight-medium); /*weight of the text */
+  }
+     /* optional if you want to change the font size of the text 
+     in every description
+     .product-section .product-list .product-item .text{
+   font-size: var(--font-size-m); /*
+  }
 
   /*Service section styling */
   .service-section {
