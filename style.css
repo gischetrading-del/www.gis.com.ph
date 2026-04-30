@@ -343,13 +343,11 @@ header .navbar { /* position of Home, About, Products, Parts & Services, contact
 
 /* IMAGE */
 .product-card img {
-width: 150px;
-  height: 110px;
-  object-fit: cover;
-  display: block;
-  margin: 0 auto;
+  width: 100%;
+  height: 150px;
+  object-fit: contain; /* hindi puputol image */
+  background: #fff;    /* optional para clean look */
   border-radius: 10px;
-  transition: transform 0.3s ease;
 }
 
 /* TEXT */
