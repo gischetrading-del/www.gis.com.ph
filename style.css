@@ -331,17 +331,17 @@ header .navbar { /* position of Home, About, Products, Parts & Services, contact
 
 /* PRODUCT CARD */
 .product-card {
-  flex: 0 0 280px;
+  flex: 0 0 260px;
   background: rgba(0, 0, 0, 0.6);
   border-radius: 15px;
-  padding: 15px;
+  padding: 12px;
   text-align: center;
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 /* IMAGE */
 .product-card img {
-  width: 100%;
+  width: 60%;
   height: 140px;
   object-fit: cover;
   border-radius: 10px;
