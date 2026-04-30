@@ -341,11 +341,11 @@ header .navbar { /* position of Home, About, Products, Parts & Services, contact
 
 /* IMAGE */
 .product-card img {
- width: 150px;
-  height: 110px;
+  width: 100%;
+  height: 180px;
   object-fit: cover;
-  display: block;
-  margin: 0 auto;
+  border-radius: 10px;
+  transition: transform 0.4s ease;
 }
 
 /* TEXT */
