@@ -76,9 +76,7 @@
  }
 
  img { /*whole website */
-     max-width: 100%;
-   height: auto;
-   display: block; /* general */
+   width: 100%; /* general */
  }
 
 
@@ -333,12 +331,12 @@ header .navbar { /* position of Home, About, Products, Parts & Services, contact
 
 /* PRODUCT CARD */
 .product-card {
-  flex: 0 0 260px;
+  flex: 0 0 280px;
   background: rgba(0, 0, 0, 0.6);
   border-radius: 15px;
   padding: 12px;
   text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
 /* IMAGE */
@@ -760,22 +758,4 @@ header .navbar { /* position of Home, About, Products, Parts & Services, contact
   font-size: 35px;
   color: #fff;
   cursor: pointer;
-}
-
-@media screen and (max-width: 1024px) {
-  .product-card img {
-    height: 130px;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .product-card img {
-    height: 120px;
-  }
-}
-
-@media screen and (max-width: 480px) {
-  .product-card img {
-    height: 110px;
-  }
 }
