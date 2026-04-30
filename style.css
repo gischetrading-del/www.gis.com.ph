@@ -453,7 +453,7 @@ header .navbar { /* position of Home, About, Products, Parts & Services, contact
   border-radius: 14px;
   cursor: pointer;
   box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-  transition: all 0.3s ease;
+   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 /* Hover effect */
@@ -461,10 +461,13 @@ header .navbar { /* position of Home, About, Products, Parts & Services, contact
   width: 100%;
   display: block;
   transition: transform 0.4s ease;
+  height: auto;
+  display: block;
 }
 
 .profile-item:hover {
   box-shadow: 0 12px 25px rgba(0,0,0,0.2);
+   transform: translateY(-5px);
 }
 
 .profile-item:hover img {
@@ -601,7 +604,7 @@ header .navbar { /* position of Home, About, Products, Parts & Services, contact
       top: 0;
       height: 100%;
       width: 100%;
-      backdrop-filter: blur (5px);
+      backdrop-filter: blur(5px);
       background: rgba(0, 0,0, 0.2);
    }
 
@@ -696,13 +699,6 @@ header .navbar { /* position of Home, About, Products, Parts & Services, contact
          max-width: 200px; /* it adjusts when the webpage is in restore down mode */
       }
 
-      .profile-section .profile-list{
-         gap: 30px;
-      }
-
-      .profile-section .profile-list .profile-item{
-         width: calc(100% / 2 - 32px); /* it computes the width of every item to make 2 columns layout */
-      }
 
       .contact-section .section-content{ /* it changes and fix the elements' position in the flex container */
          align-items: center;
@@ -731,10 +727,21 @@ header .navbar { /* position of Home, About, Products, Parts & Services, contact
   width: 100%;
   height: 100%;
   background: rgba(0,0,0,0.9);
-  display: none;
+
+  display: flex;              /* always flex */
   justify-content: center;
   align-items: center;
+
+  opacity: 0;                 /* hidden state */
+  pointer-events: none;       /* disable click */
+  transition: opacity 0.3s ease;
+
   z-index: 999;
+}
+
+.lightbox.show {
+  opacity: 1;
+  pointer-events: auto;
 }
 
 .lightbox img {
