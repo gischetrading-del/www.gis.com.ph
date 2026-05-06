@@ -358,7 +358,7 @@ header .navbar { /* position of Home, About, Products, Parts & Services, contact
 
 /* HOVER EFFECT */
 .product-card:hover {
-  transform: translateY(-10px);
+  transform: translateY(-10px) scale(1);
   box-shadow: 0 10px 25px rgba(0,0,0,0.4);
 }
 
@@ -379,24 +379,6 @@ header .navbar { /* position of Home, About, Products, Parts & Services, contact
 /* PAUSE ON HOVER */
 .product-slider:hover .slider-track {
   animation-play-state: paused;
-}
-
-.product-card {
-  transition: transform 0.4s ease, opacity 0.4s ease, filter 0.4s ease;
-}
-
-/* clicked / focused item */
-.product-card.active {
-  transform: scale(1.08);
-  opacity: 1;
-  z-index: 2;
-}
-
-/* all others when one is active */
-.product-card.dim {
-  opacity: 0.4;
-  transform: scale(0.95);
-  filter: grayscale(30%);
 }
 
   /*Service section styling */
@@ -469,6 +451,25 @@ header .navbar { /* position of Home, About, Products, Parts & Services, contact
        color: var(--dark-color);
        transition: 0.3s ease;
    }
+
+   .product-card {
+  transition: transform 0.4s ease, opacity 0.4s ease, filter 0.4s ease;
+}
+
+/* clicked / focused item */
+.product-card.active {
+ transform: scale(1.15) !important;
+  opacity: 1 !important;
+  filter: none !important;
+  z-index: 10;
+}
+
+/* all others when one is active */
+.product-card.dim {
+  opacity: 0.35;
+  transform: scale(0.92) !important;
+  filter: grayscale(50%);
+}
 
    /*Profile Section Styling */
    /* Pinterest / Masonry */
