@@ -328,6 +328,8 @@ header .navbar { /* position of Home, About, Products, Parts & Services, contact
   gap: 20px;
   width: max-content;
   animation: scroll 25s linear infinite;
+
+  will-change: transform;
 }
 
 /* PRODUCT CARD */
@@ -358,7 +360,7 @@ header .navbar { /* position of Home, About, Products, Parts & Services, contact
 
 /* HOVER EFFECT */
 .product-card:hover {
-  transform: translateY(-10px) scale(1);
+  transform: translateY(-10px);
   box-shadow: 0 10px 25px rgba(0,0,0,0.4);
 }
 
@@ -458,17 +460,18 @@ header .navbar { /* position of Home, About, Products, Parts & Services, contact
 
 /* clicked / focused item */
 .product-card.active {
- transform: scale(1.15) !important;
+  transform: scale(1.2) !important;
   opacity: 1 !important;
   filter: none !important;
-  z-index: 10;
+  z-index: 50;
 }
 
 /* all others when one is active */
 .product-card.dim {
+  .product-card.dim {
   opacity: 0.35;
-  transform: scale(0.92) !important;
-  filter: grayscale(50%);
+  filter: grayscale(60%);
+  transform: scale(0.95);
 }
 
    /*Profile Section Styling */
