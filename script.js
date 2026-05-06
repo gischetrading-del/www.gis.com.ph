@@ -122,3 +122,29 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+
+const cards = document.querySelectorAll(".product-card");
+
+cards.forEach(card => {
+  card.addEventListener("click", () => {
+
+    // check if already active → reset all
+    if (card.classList.contains("active")) {
+      cards.forEach(c => {
+        c.classList.remove("active");
+        c.classList.remove("dim");
+      });
+      return;
+    }
+
+    // set dim lahat
+    cards.forEach(c => {
+      c.classList.remove("active");
+      c.classList.add("dim");
+    });
+
+    // set active clicked
+    card.classList.add("active");
+    card.classList.remove("dim");
+  });
+});

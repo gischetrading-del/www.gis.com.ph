@@ -297,9 +297,9 @@ header .navbar { /* position of Home, About, Products, Parts & Services, contact
   /*Products section styling */
    .product-section {
     min-height: 100vh;
+   padding: 3% 0 2%;
   position: relative;
-  overflow: hidden;
-  padding: 3% 0 2%;
+  overflow: hidden;;
   color: var(--white-color);
   background-image: url('images/bg.jpg');
   background-position: center;
@@ -383,10 +383,10 @@ header .navbar { /* position of Home, About, Products, Parts & Services, contact
 
   /*Service section styling */
   .service-section {
-    min-height: 100vh;
-   position: relative;
-      overflow: hidden;
+       min-height: 100vh;
       padding: 3% 0 2%; /*lapad ng between ng "wing van" at "our service" */
+      position: relative;
+      overflow: hidden;
       color:var(--white-color); /*text color */
        background-image: url('images/sbg.jpg');
        background-position: center;
@@ -761,4 +761,22 @@ header .navbar { /* position of Home, About, Products, Parts & Services, contact
   font-size: 35px;
   color: #fff;
   cursor: pointer;
+}
+
+.product-card {
+  transition: transform 0.4s ease, opacity 0.4s ease, filter 0.4s ease;
+}
+
+/* clicked / focused item */
+.product-card.active {
+  transform: scale(1.08);
+  opacity: 1;
+  z-index: 2;
+}
+
+/* all others when one is active */
+.product-card.dim {
+  opacity: 0.4;
+  transform: scale(0.95);
+  filter: grayscale(30%);
 }
