@@ -94,7 +94,7 @@
 
  .section-content{ /*adjustment of the sides of the page */
    margin: 0 auto; /*sides */
-   padding: 0 10px; /*lapad sa baba */
+   padding: 0 20px; /*lapad sa baba */
    max-width: var(--site-max-width);
    overflow:visible;
  }
@@ -163,9 +163,10 @@ header .navbar { /* position of Home, About, Products, Parts & Services, contact
 
 /*hero section styling */
 .hero-section {
-   min-height: 100vh;
    position: relative;   /* IMPORTANT para gumana ang overlay */
    overflow: hidden;      /*para ivoid ang excess space */
+   padding-top: 250px; /*for the adjustment of the text*/
+   padding-bottom: 10px;
     width: 100%;
    height: 100%;
 }
@@ -295,108 +296,90 @@ header .navbar { /* position of Home, About, Products, Parts & Services, contact
   } end of about section */
 
   /*Products section styling */
-   .product-section {
-   min-height: 100vh;
-  padding: 80px 0 60px;
-  position: relative;
-  overflow: hidden;
-  color: var(--white-color);
-  background-image: url('images/bg.jpg');
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
+   .product-section{
+      position: relative;
+      overflow: hidden;
+   
+      padding: 3% 0 2%; /*lapad ng between ng "wing van" at "our service" */
+      color:var(--white-color); /*text color */
+       background-image: url('images/bg.jpg');
+       background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: scroll;
+       background-attachment: fixed;
+   }
+
+  .product-section .product-list {
+   /*display: flex;
+   flex-wrap: wrap;
+   gap: 30px;
+   justify-content: space-between; /*it adjust the alignment of the images 
+  }*/
+   display: flex; /*pangscroll animation */
+   gap: 30px;
+   overflow-x: auto;
+   scroll-behavior: smooth;
+   padding-bottom: 10px; 
 }
 
-/* TITLE */
-.section-title {
-  text-align: center;
-  font-size: 2.5rem;
-  margin-top: 20px;
-  margin-bottom: 80px;
+    .product-section .product-list .product-item { /*alignment of products and texts */
+   /*display: flex;
+   align-items: center;
+   text-align: center;
+   flex-direction: column;
+   justify-content: space-between;
+   width: calc(100% / 3 - 20px);
+  } */
+   flex: 0 0 auto;
+   min-width: 250px;
 }
 
-/* SLIDER WRAPPER */
-.product-slider {
-  width: 100%;
-  overflow: hidden;
-  padding: 20px 0;
+.product-section .product-list::-webkit-scrollbar {
+   height: 8px;
 }
 
-/* MOVING TRACK */
-.slider-track {
-  display: flex;
-  gap: 20px;
-  width: max-content;
-  animation: scroll 25s linear infinite;
+.product-section .product-list::-webkit-scrollbar-thumb {
+   background: var(--white-color);
+   border-radius: 10px;
 }
 
-/* PRODUCT CARD */
-.product-card {
-   flex: 0 0 420px;
-  padding: 20px;
-}
-
-/* IMAGE */
-.product-card img {
-     width: 100%;
-  height: 320px;
-  object-fit: contain;
-  background: #f5f5f5;
-  padding: 15px;
-  border-radius: 12px;
-  display: block;
-  margin: 0 auto;
-}
-
-/* TEXT */
-.product-card .text {
-  font-size: 0.9rem;
-  margin-top: 10px;
-  opacity: 0.85;
-}
-
-/* HOVER EFFECT */
-.product-card:hover {
+.product-item:hover {
   transform: translateY(-10px);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.4);
 }
 
-.product-card:hover img {
-  transform: scale(1.08);
-}
-.product-section .section-content {
- max-width: 1700px;
-  margin: 0 auto;
-  padding: 0 40px;
-}
-
-/* AUTO SCROLL ANIMATION */
-@keyframes scroll {
-  0% {
-    transform: translateX(0);
+  .product-section .product-list .product-item .product-image{ 
+   /*adjustment of the images */
+   max-width: 80%;
+    aspect-ratio: 4/3; /* to make equal of the width and height of the element */
+    margin-bottom: 15px;
+    object-fit: contain; /* Controls how the image displays on the container */
   }
-  100% {
-    transform: translateX(-50%);
-  }
-}
 
-/* PAUSE ON HOVER */
-.product-slider:hover .slider-track {
-  animation-play-state: paused;
-}
+  .product-section .product-list .product-item .text{
+   margin: 10px 0; /*size of the text's margin */
+   font-size: var(--font-size-l); /* font size of the text */
+   font-weight: var(--font-weight-medium); /*weight of the text */
+  }
+     /* optional if you want to change the font size of the text 
+     in every description
+     .product-section .product-list .product-item .text{
+   font-size: var(--font-size-m); /*
+  }
 
   /*Service section styling */
   .service-section {
-       min-height: 100vh;
-      padding: 3% 0 2%; /*lapad ng between ng "wing van" at "our service" */
-      position: relative;
+   position: relative;
       overflow: hidden;
+   
+      padding: 3% 0 2%; /*lapad ng between ng "wing van" at "our service" */
       color:var(--white-color); /*text color */
        background-image: url('images/sbg.jpg');
        background-position: center;
       background-size: cover;
       background-repeat: no-repeat;
       background-attachment: scroll;
+       background-attachment: fixed;
   }
 
   .service-section .slider-wrapper{
@@ -457,62 +440,39 @@ header .navbar { /* position of Home, About, Products, Parts & Services, contact
    }
 
    /*Profile Section Styling */
-   /* Pinterest / Masonry */
-
    .profile-section{
-       min-height: 100vh;
-/*lapad ng between ng "wing van" at "our service" */
+      padding: 3% 0 2%; /*lapad ng between ng "wing van" at "our service" */
       background: var(--medium-gray-color); /*lapad ng company profile sa taas */
    }
 
-.profile-gallery {
-  column-count: 3;
-  column-gap: 15px;
-}
+   .profile-section .profile-list{
+      display: flex;
+      flex-wrap: wrap;
+      gap: 32px;
+   }
+   .profile-section .profile-list .profile-item{
+      overflow: hidden;
+      position: relative;
+      border-radius: var(--border-radius-s);
+      width: calc(100% / 2- 32px);
+   }
 
-.profile-item {
-  margin-bottom: 15px;
-  break-inside: avoid;
-  overflow: hidden;
-  border-radius: 14px;
-  cursor: pointer;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-   transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-/* Hover effect */
-.profile-item img {
-  width: 100%;
-  display: block;
-  transition: transform 0.4s ease;
-  height: auto;
-}
-
-.profile-item:hover {
-  box-shadow: 0 12px 25px rgba(0,0,0,0.2);
-   transform: translateY(-5px);
-}
-
-.profile-item:hover img {
-  transform: scale(1.08);
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .profile-gallery {
-    column-count: 2;
-  }
-}
-
-@media (max-width: 480px) {
-  .profile-gallery {
-    column-count: 1;
-  }
-}
+   .profile-section .profile-item .profile-image{ /*animation */
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transform: scale(1);
+      transition: transform 0.3s ease;
+      cursor: pointer;
+   }
+   .profile-section .profile-item:hover .profile-image{
+      transform: scale(1.1); /*image animation*/
+   }
 
    /*Contact Us section styling */
    .contact-section{
-       min-height: 100vh;
+      padding: 30px 0 70px;
       background: var(--light-pink-color);
    }
 
@@ -600,7 +560,14 @@ header .navbar { /* position of Home, About, Products, Parts & Services, contact
     }
 
     /*Responsive media query code for max width 1024px */
- 
+  @media screen and (max-width: 1024px) { /*text's width */
+  .product-section .product-list {
+   gap: 60px; 
+  }
+   .product-section .product-list .product-item {
+      width: calc(100% / 3 - 40px);
+   }
+}
 
    /*Responsive media query code for max width 900px */
 @media screen and (max-width: 900px){
@@ -620,7 +587,7 @@ header .navbar { /* position of Home, About, Products, Parts & Services, contact
       top: 0;
       height: 100%;
       width: 100%;
-      backdrop-filter: blur(5px);
+      backdrop-filter: blur (5px);
       background: rgba(0, 0,0, 0.2);
    }
 
@@ -707,6 +674,21 @@ header .navbar { /* position of Home, About, Products, Parts & Services, contact
       aspect-ratio: 1; /* it perfects the square of the image (1:1 ratio) 
    } */
 
+      .product-section .product-list .product-item{
+         width: calc(100% / 2 - 30px); /*image size of the images in our product section */
+      }
+
+      .product.section .product-list .product-item .product-image{
+         max-width: 200px; /* it adjusts when the webpage is in restore down mode */
+      }
+
+      .profile-section .profile-list{
+         gap: 30px;
+      }
+
+      .profile-section .profile-list .profile-item{
+         width: calc(100% / 2 - 32px); /* it computes the width of every item to make 2 columns layout */
+      }
 
       .contact-section .section-content{ /* it changes and fix the elements' position in the flex container */
          align-items: center;
@@ -715,9 +697,18 @@ header .navbar { /* position of Home, About, Products, Parts & Services, contact
 
        /*Responsive media query code for max width 640px */
 @media screen and (max-width: 640px) { /* mobile view*/
+   .product-section .menu-list{
+      gap: 60px;
+   }
+
+   .product-section .product-list .product-item,
+   .profile-section .profile-list .profile-item{ /* mobile view*/
+      width: 100%;
+   }
    .service-section .slider-wrapper{ 
       margin: 0 0 30px;
    }
+
    .service-section .swiper-slide-button{
       display: none; /* no slider button if the page is not maximized */
    }
@@ -728,41 +719,3 @@ header .navbar { /* position of Home, About, Products, Parts & Services, contact
    }
 }  
 
-.lightbox {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.9);
-
-  display: flex;              /* always flex */
-  justify-content: center;
-  align-items: center;
-
-  opacity: 0;                 /* hidden state */
-  pointer-events: none;       /* disable click */
-  transition: opacity 0.3s ease;
-
-  z-index: 999;
-}
-
-.lightbox.show {
-  opacity: 1;
-  pointer-events: auto;
-}
-
-.lightbox img {
-  max-width: 90%;
-  max-height: 90%;
-  border-radius: 10px;
-}
-
-.lightbox .close {
-  position: absolute;
-  top: 20px;
-  right: 30px;
-  font-size: 35px;
-  color: #fff;
-  cursor: pointer;
-}
