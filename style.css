@@ -411,38 +411,45 @@ header .navbar { /* position of Home, About, Products, Parts & Services, contact
    gap: 5px;
   }
 
-  .service-section .service .service-image {
-      /* Lakasan natin ang width para mas dominante sa screen */
-      width: 80%; 
-      
-      /* Tanggalin natin ang fixed height para hindi siya magmukhang pinitpit */
-      height: auto; 
-      
-      /* Lagyan natin ng max-width na medyo malaki-laki (mula 300px gawin nating 500px) */
-      max-width: 500px; 
-      
-      /* Balik tayo sa 'contain' para siguradong basa lahat ng text sa poster mo */
-      object-fit: contain; 
-      
-      margin-bottom: 20px;
-      border-radius: var(--border-radius-m);
-      transition: transform 0.3s ease;
-      
-      /* Dagdagan natin ng border para humiwalay siya sa madilim na background */
-      border: 2px solid rgba(255, 152, 0, 0.3); 
+   .service-section .service .service-image {
+      width: 60%;
+      height: 40%;
+      object-fit: cover;
+      margin-bottom: 5px;
+      border-radius: var(--border-radius-m) /*border for images */
    }
 
-   /* I-adjust din natin ang gap ng text sa baba para hindi dikit */
-   .service-section .service .name {
-      font-size: 1.5rem; /* Lakasan natin nang konti ang title */
-      margin-top: 10px;
-      color: #ff9800;
+   .service-section .service .name{
+      margin-top: 0;
+      margin-bottom: 0;
+      font-size: var(--font-size-m);
    }
 
-   .service-section .service .feedback {
-      font-size: 1rem;
-      max-width: 600px; /* Mas malapad na text area para sa description */
-      line-height: 1.6;
+    .service-image:hover {
+       transform: scale(1.05);
+       transition: 0.10s ease;
+   }
+   
+   .service-section .service .feedback{
+      line-height: 15px;
+      margin-bottom: 15px;
+   }
+
+   .service-section .swiper-pagination-bullet{ /* Dots sa baba ng images sa services */
+      width: 10px;
+      height: 10px;
+      opacity: 1;
+      background: var(--secondary-color);
+   }
+
+   .service-section .swiper-slide-button{ /*color of <,> */
+      color: var(--secondary-color);
+   }
+
+   .service-section .swiper-slide-button:hover{ /*for swiper slides animation */
+       margin-top: -50px; 
+       color: var(--dark-color);
+       transition: 0.3s ease;
    }
 
    /*Profile Section Styling */
