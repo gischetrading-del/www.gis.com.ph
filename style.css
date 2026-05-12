@@ -332,7 +332,7 @@ header .navbar { /* position of Home, About, Products, Parts & Services, contact
 
 /* PRODUCT CARD */
 .product-card {
-  flex: 0 0 500px;
+  flex: 0 0 300px;
   background: rgba(0, 0, 0, 0.6);
   border-radius: 15px;
   padding: 50%;
