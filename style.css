@@ -319,53 +319,54 @@ header .navbar { /* position of Home, About, Products, Parts & Services, contact
   flex: 0 0 280px;
   background: rgba(0, 0, 0, 0.6);
   border-radius: 15px;
-  padding: 20px; /* Ginawang 20px mula 30px para hindi masyadong malaki ang kinakain na space */
+  padding: 20px;
   text-align: center;
-  /* Dito natin idadagdag ang scale para lumaki ang container */
-  transition: transform 0.4s ease, box-shadow 0.4s ease; 
-  overflow: hidden; /* Para hindi lumampas ang image pag lumaki */
+  /* transition lang ang ilagay dito, huwag transform */
+  transition: all 0.4s ease; 
+  overflow: hidden;
 }
 
-/* IMAGE - Katamtamang laki at fit */
+/* IMAGE - Eto ang "katamtaman" na size */
 .product-card img {
-  width: 95%; /* Hindi sagad na sagad, para may konting gap */
-  height: 160px; /* Binabaan natin para maging "katamtaman" lang */
-  object-fit: contain; /* Para siguradong buo ang truck at hindi putol ang gilid */
+  width: 100%;
+  height: 160px; /* Mas maliit nang konti para mag-fit */
+  object-fit: contain; /* Para hindi putol ang mga truck */
   border-radius: 10px;
   transition: transform 0.4s ease;
-  margin: 0 auto; /* Center ang image */
 }
 
-/* TEXT */
-.product-card .text {
-  font-size: 0.85rem; /* Mas maliit nang konti para mag-fit ang content */
-  margin-top: 15px;
-  opacity: 0.85;
-  line-height: 1.4;
-}
-
-/* HOVER EFFECT - Sabay na lalaki ang container at aangat */
+/* HOVER EFFECT - Dito natin aayusin */
 .product-card:hover {
-  /* translateY para umangat, scale(1.05) para lumaki ang container ng 5% */
-  transform: translateY(-10px) scale(1.05); 
-  box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+  /* Gumamit ng scale lang para hindi maapektuhan ang horizontal scroll ng track */
+  transform: scale(1.05); 
+  box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+  background: rgba(0, 0, 0, 0.8);
+  cursor: pointer;
 }
 
 .product-card:hover img {
-  /* Katamtamang laki lang ng image sa loob (5% zoom) */
-  transform: scale(1.05); 
+  transform: scale(1.05);
 }
 
-/* PANATILIHIN ANG IYONG ORIGINAL ANIMATION SA IBABA */
+/* SIGURADUHIN NA HINDI NAWALA ITO: */
+.slider-track {
+  display: flex;
+  width: calc(280px * 12); /* I-adjust base sa dami ng cards mo */
+  animation: scroll 20s linear infinite;
+}
+
 @keyframes scroll {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
 .product-slider:hover .slider-track {
   animation-play-state: paused;
 }
-
 
   /*Service section styling */
   .service-section {
