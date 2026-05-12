@@ -1,6 +1,11 @@
-/*importing Google fonts */
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Purple+Purse&display=swap');
+/* =========================
+   IMPORT GOOGLE FONTS
+========================= */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&family=Purple+Purse&display=swap');
 
+/* =========================
+   RESET
+========================= */
 *{
   margin: 0;
   padding: 0;
@@ -8,48 +13,60 @@
   font-family: "Open Sans", sans-serif;
 }
 
-:root{
-
-/* colors */
---white-color: #fff;
---dark-color: #252525;
---primary-color:#126180;
---secondary-color: #f3961c;
---light-pink-color: #faf4f5;
---medium-gray-color: #ccc;
---third-color: #f5fbfd; 
---products-background-color: #F5F5F5;
-
-/* Font size */
---font-size-s: 0.9rem;
---font-size-n: 1rem;
---font-size-m: 1.12rem;
---font-size-l: 1.5rem;
---font-size-xl: 2rem;
---font-size-xxl: 2.5rem;
-
-/* Font weight */
---font-weight-normal: 400;
---font-weight-medium: 500;
---font-weight-semibold: 600;
---font-weight-bold: 700;
-
-/* Border radius */
---border-radius-s: 8px;
---border-radius-m: 30px;
---border-radius-circle: 50%;
-
-/* Site max width */
---site-max-width: 2000px;
-}
-
-/* end of root */
-
 html{
   scroll-behavior: smooth;
 }
 
-/* Styling for whole site */
+body{
+  overflow-x: hidden;
+}
+
+/* =========================
+   ROOT
+========================= */
+:root{
+
+  /* COLORS */
+  --white-color: #fff;
+  --dark-color: #252525;
+  --primary-color:#126180;
+  --secondary-color: #f3961c;
+  --light-pink-color: #faf4f5;
+  --medium-gray-color: #ccc;
+  --third-color: #f5fbfd;
+  --products-background-color: #F5F5F5;
+
+  /* FONT SIZE */
+  --font-size-s: 0.9rem;
+  --font-size-n: 1rem;
+  --font-size-m: 1.12rem;
+  --font-size-l: 1.5rem;
+  --font-size-xl: 2rem;
+  --font-size-xxl: 2.5rem;
+
+  /* FONT WEIGHT */
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  /* BORDER RADIUS */
+  --border-radius-s: 8px;
+  --border-radius-m: 30px;
+  --border-radius-circle: 50%;
+
+  /* SITE WIDTH */
+  --site-max-width: 2000px;
+}
+
+/* =========================
+   GENERAL
+========================= */
+
+section{
+  scroll-margin-top: 90px;
+}
+
 ul{
   list-style: none;
 }
@@ -58,21 +75,48 @@ a{
   text-decoration: none;
 }
 
-button {
+button{
   cursor: pointer;
   border: none;
-  background: none;  
+  background: none;
 }
 
-img {
+img{
   width: 100%;
   display: block;
 }
 
-/* NAVBAR */
+.section-content{
+  margin: 0 auto;
+  padding: 0 20px;
+  max-width: var(--site-max-width);
+}
+
+.section-title{
+  text-align: center;
+  padding: 100px 0 60px;
+  text-transform: uppercase;
+  font-size: var(--font-size-xl);
+}
+
+.section-title::after{
+  content: "";
+  width: 80px;
+  height: 5px;
+  display: block;
+  margin: 10px auto 0;
+  border-radius: var(--border-radius-s);
+  background: var(--secondary-color);
+}
+
+/* =========================
+   NAVBAR
+========================= */
 
 header{
   position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
   z-index: 999;
   background: var(--primary-color);
@@ -80,7 +124,7 @@ header{
 
 header .navbar{
   display: flex;
-  padding: 10px;
+  padding: 10px 20px;
   align-items: center;
   justify-content: space-between;
 }
@@ -122,40 +166,22 @@ header .navbar{
   display: none;
 }
 
-/* GENERAL SECTIONS */
-
-.section-content{
-  margin: 0 auto;
-  padding: 0 20px;
-  max-width: var(--site-max-width);
-}
-
-.section-title{
-  text-align: center;
-  padding: 60px 0;
-  text-transform: uppercase;
-  font-size: var(--font-size-xl);
-}
-
-.section-title::after{
-  content: "";
-  width: 80px;
-  height: 5px;
-  display: block;
-  margin: 10px auto 0;
-  border-radius: var(--border-radius-s);
-  background: var(--secondary-color);
-}
-
-/* HERO SECTION */
+/* =========================
+   HERO SECTION
+========================= */
 
 .hero-section{
   position: relative;
   min-height: 100vh;
+  width: 100%;
+
   overflow: hidden;
 
-  background:
-    linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
+  background-image:
+    linear-gradient(
+      rgba(0,0,0,0.45),
+      rgba(0,0,0,0.45)
+    ),
     url('images/office.jpg');
 
   background-position: center;
@@ -163,61 +189,85 @@ header .navbar{
   background-repeat: no-repeat;
 }
 
-.hero-details{
-  position: relative;
-  z-index: 2;
-}
-
 .hero-section .section-content{
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
+
   text-align: center;
+
   min-height: 100vh;
+
   color: var(--white-color);
+
+  padding: 120px 20px 40px;
+}
+
+.hero-details{
+  width: 100%;
 }
 
 .hero-section .hero-details .title{
   max-width: 100%;
-  margin: 24px auto 40px;
+  margin: 0 auto 30px;
+
   font-size: var(--font-size-xxl);
+  color: var(--white-color);
+
   font-family: "Purple Purse";
 }
 
 .hero-section .hero-details .description{
   max-width: 700px;
   margin: 0 auto 40px;
+
   font-size: var(--font-size-m);
   line-height: 1.8;
 }
 
 .hero-section .hero-details .button{
   display: inline-block;
+
   padding: 12px 28px;
+
   border-radius: var(--border-radius-m);
+
   background: var(--secondary-color);
+
   color: var(--primary-color);
-  font-weight: var(--font-weight-semibold);
+
+  font-weight: var(--font-weight-medium);
+
   transition: 0.3s ease;
 }
 
 .hero-section .hero-details .button:hover{
   background: transparent;
-  border: 2px solid var(--white-color);
   color: var(--white-color);
+  border: 2px solid var(--white-color);
 }
 
-/* PRODUCTS SECTION */
+/* =========================
+   PRODUCTS SECTION
+========================= */
 
 .product-section{
   min-height: 100vh;
-  padding: 3% 0 2%;
+
+  padding: 100px 0 60px;
+
   position: relative;
+
   overflow: hidden;
+
   color: var(--white-color);
 
-  background:
-    linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
+  background-image:
+    linear-gradient(
+      rgba(0,0,0,0.45),
+      rgba(0,0,0,0.45)
+    ),
     url('images/bg.jpg');
 
   background-position: center;
@@ -242,10 +292,15 @@ header .navbar{
 
 .product-card{
   flex: 0 0 280px;
+
   background: rgba(0,0,0,0.6);
+
   border-radius: 15px;
-  padding: 20px;
+
+  padding: 30px;
+
   text-align: center;
+
   transition: 0.4s ease;
 }
 
@@ -253,7 +308,9 @@ header .navbar{
   width: 100%;
   height: 180px;
   object-fit: cover;
+
   border-radius: 10px;
+
   transition: 0.4s ease;
 }
 
@@ -286,17 +343,26 @@ header .navbar{
   animation-play-state: paused;
 }
 
-/* SERVICE SECTION */
+/* =========================
+   SERVICE SECTION
+========================= */
 
 .service-section{
   min-height: 100vh;
-  padding: 3% 0 2%;
+
+  padding: 100px 0 60px;
+
   position: relative;
+
   overflow: hidden;
+
   color: var(--white-color);
 
-  background:
-    linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
+  background-image:
+    linear-gradient(
+      rgba(0,0,0,0.45),
+      rgba(0,0,0,0.45)
+    ),
     url('images/sbg.jpg');
 
   background-position: center;
@@ -311,21 +377,31 @@ header .navbar{
 
 .service-section .service{
   user-select: none;
+
   display: flex;
+
   padding: 1%;
+
   text-align: center;
+
   flex-direction: column;
+
   justify-content: center;
   align-items: center;
+
   gap: 5px;
 }
 
 .service-section .service .service-image{
   width: 60%;
   height: 40%;
+
   object-fit: cover;
+
   margin-bottom: 5px;
+
   border-radius: var(--border-radius-m);
+
   transition: 0.3s ease;
 }
 
@@ -340,7 +416,9 @@ header .navbar{
 .service-section .swiper-pagination-bullet{
   width: 10px;
   height: 10px;
+
   opacity: 1;
+
   background: var(--secondary-color);
 }
 
@@ -352,10 +430,15 @@ header .navbar{
   color: var(--white-color);
 }
 
-/* PROFILE SECTION */
+/* =========================
+   PROFILE SECTION
+========================= */
 
 .profile-section{
   min-height: 100vh;
+
+  padding: 100px 0 60px;
+
   background: var(--medium-gray-color);
 }
 
@@ -366,21 +449,30 @@ header .navbar{
 
 .profile-item{
   margin-bottom: 15px;
+
   break-inside: avoid;
+
   overflow: hidden;
+
   border-radius: 14px;
+
   cursor: pointer;
+
   box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+
   transition: 0.3s ease;
 }
 
 .profile-item img{
   width: 100%;
+  height: auto;
+
   transition: 0.4s ease;
 }
 
 .profile-item:hover{
   transform: translateY(-5px);
+
   box-shadow: 0 12px 25px rgba(0,0,0,0.2);
 }
 
@@ -388,40 +480,57 @@ header .navbar{
   transform: scale(1.05);
 }
 
-/* CONTACT SECTION */
+/* =========================
+   CONTACT SECTION
+========================= */
 
 .contact-section{
   min-height: 100vh;
+
+  padding: 100px 0 60px;
+
   background: var(--light-pink-color);
 }
 
 .contact-section .section-content{
   display: flex;
+
   gap: 48px;
+
   align-items: flex-start;
+
   justify-content: space-between;
 }
 
 .contact-section .contact-info-list .contact-info{
   display: flex;
+
   gap: 20px;
+
   margin: 20px 0;
+
   align-items: center;
 }
 
 .contact-section .contact-form{
-  max-width: 50%;
   width: 100%;
+  max-width: 50%;
 }
 
 .contact-section .contact-form .form-input{
   width: 100%;
   height: 50px;
+
   padding: 0 12px;
+
   outline: none;
+
   margin-bottom: 16px;
+
   background: var(--white-color);
+
   border-radius: var(--border-radius-s);
+
   border: 1px solid var(--medium-gray-color);
 }
 
@@ -437,21 +546,30 @@ header .navbar{
 
 .contact-section .contact-form .submit-button{
   padding: 10px 26px;
+
   margin-top: 10px;
+
   color: var(--white-color);
+
   font-size: var(--font-size-m);
+
   background: var(--primary-color);
+
   border-radius: var(--border-radius-m);
+
+  border: 1px solid var(--primary-color);
+
   transition: 0.3s ease;
 }
 
 .contact-section .contact-form .submit-button:hover{
-  background: transparent;
   color: var(--primary-color);
-  border: 1px solid var(--primary-color);
+  background: transparent;
 }
 
-/* FOOTER */
+/* =========================
+   FOOTER
+========================= */
 
 .footer-section{
   padding: 20px 0;
@@ -482,22 +600,30 @@ header .navbar{
   color: var(--secondary-color);
 }
 
-/* LIGHTBOX */
+/* =========================
+   LIGHTBOX
+========================= */
 
 .lightbox{
   position: fixed;
+
   top: 0;
   left: 0;
+
   width: 100%;
   height: 100%;
+
   background: rgba(0,0,0,0.9);
 
   display: flex;
+
   justify-content: center;
   align-items: center;
 
   opacity: 0;
+
   pointer-events: none;
+
   transition: opacity 0.3s ease;
 
   z-index: 9999;
@@ -516,14 +642,20 @@ header .navbar{
 
 .lightbox .close{
   position: absolute;
+
   top: 20px;
   right: 30px;
+
   font-size: 35px;
+
   color: #fff;
+
   cursor: pointer;
 }
 
-/* RESPONSIVE */
+/* =========================
+   RESPONSIVE
+========================= */
 
 @media screen and (max-width: 900px){
 
@@ -536,9 +668,17 @@ header .navbar{
 
   body.show-mobile-menu header::before{
     content:"";
+
     position: fixed;
-    inset: 0;
+
+    left:0;
+    top:0;
+
+    width:100%;
+    height:100%;
+
     backdrop-filter: blur(5px);
+
     background: rgba(0,0,0,0.2);
   }
 
@@ -559,14 +699,23 @@ header .navbar{
 
   .navbar .nav-menu{
     position: fixed;
+
     left: -300px;
     top: 0;
+
     width: 220px;
     height: 100%;
+
+    display: flex;
+
     flex-direction: column;
+
     align-items: center;
+
     padding-top: 100px;
+
     background: var(--primary-color);
+
     transition: left 0.3s ease;
   }
 
@@ -574,10 +723,18 @@ header .navbar{
     left: 0;
   }
 
+  .navbar .nav-menu .nav-link{
+    display: block;
+
+    margin-top: 17px;
+
+    color: var(--white-color);
+
+    font-size: var(--font-size-l);
+  }
+
   .hero-section .section-content{
-    flex-direction: column;
-    gap: 40px;
-    padding: 120px 20px 50px;
+    padding: 140px 20px 60px;
   }
 
   .contact-section .section-content{
@@ -592,13 +749,6 @@ header .navbar{
   .profile-gallery{
     column-count: 2;
   }
-}
-
-@media screen and (max-width: 640px){
-
-  .profile-gallery{
-    column-count: 1;
-  }
 
   .service-section .slider-wrapper{
     margin: 0 0 30px;
@@ -611,5 +761,20 @@ header .navbar{
   .footer-section .section-content{
     flex-direction: column;
     gap: 20px;
+  }
+}
+
+@media screen and (max-width: 640px){
+
+  .profile-gallery{
+    column-count: 1;
+  }
+
+  .hero-section .hero-details .title{
+    font-size: 2rem;
+  }
+
+  .hero-section .hero-details .description{
+    font-size: 1rem;
   }
 }
