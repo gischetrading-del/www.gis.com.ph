@@ -335,7 +335,7 @@ header .navbar { /* position of Home, About, Products, Parts & Services, contact
   flex: 0 0 280px;
   background: rgba(0, 0, 0, 0.6);
   border-radius: 15px;
-  padding: 30px;
+  padding: 50%;
   text-align: center;
   transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
