@@ -382,75 +382,96 @@ header .navbar { /* position of Home, About, Products, Parts & Services, contact
 }
 
   /*Service section styling */
-  .service-section {
-       min-height: 100vh;
-      padding: 3% 0 2%; /*lapad ng between ng "wing van" at "our service" */
-      position: relative;
-      overflow: hidden;
-      color:var(--white-color); /*text color */
-       background-image: url('images/sbg.jpg');
-       background-position: center;
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-attachment: scroll;
-  }
+ .service-section {
+    min-height: 100vh;
+    /* Inayos ang padding: 80px sa taas/baba para may hininga ang section */
+    padding: 80px 0; 
+    position: relative;
+    overflow: hidden;
+    color: var(--white-color);
+    background-image: url('images/sbg.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    /* Mas maganda ang 'fixed' para sa background para may parallax effect, 
+       pero kung gusto mo scroll lang, okay din ang scroll */
+    background-attachment: scroll;
+}
 
-  .service-section .slider-wrapper{
-   overflow: hidden;
-   margin: 0 80px 60px;
-  }
+.service-section .slider-wrapper {
+    overflow: hidden;
+    /* Ginawang auto ang margin sa gilid para laging center */
+    margin: 0 auto 60px;
+    max-width: 1200px; /* Limit para hindi masyadong malapad sa desktop */
+    padding: 0 20px;
+}
 
-  .service-section .service{
-   user-select: none;
-   display: flex;
-   padding: 1%; /*lapad ng space from "our service" hanggang sa image*/
-   text-align: center;
-   flex-direction: column;
-   justify-content: center;
-   align-items: center;
-   gap: 5px;
-  }
+.service-section .service {
+    user-select: none;
+    display: flex;
+    /* Balanse na padding sa loob ng bawat service slide */
+    padding: 20px; 
+    text-align: center;
+    flex-direction: column;
+    justify-content: flex-start; /* Simula sa taas para pantay-pantay */
+    align-items: center;
+    gap: 15px; /* Dinagdagan ang gap para hindi dikit-dikit ang text */
+}
 
-   .service-section .service .service-image {
-      width: 60%;
-      height: 40%;
-      object-fit: cover;
-      margin-bottom: 5px;
-      border-radius: var(--border-radius-m) /*border for images */
-   }
+/* IMAGE FIX - Dito natin aayusin ang size */
+.service-section .service .service-image {
+    width: 100%; /* Gamitin ang buong width ng container */
+    max-width: 300px; /* Pero huwag lalampas sa 300px para "katamtaman" lang */
+    aspect-ratio: 1 / 1; /* Gawing square para uniform lahat ng services */
+    object-fit: cover;
+    border-radius: var(--border-radius-m);
+    transition: transform 0.3s ease; /* Nilipat dito ang transition para swabe */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
 
-   .service-section .service .name{
-      margin-top: 0;
-      margin-bottom: 0;
-      font-size: var(--font-size-m);
-   }
+/* Hover Effect para sa Image */
+.service-section .service .service-image:hover {
+    transform: scale(1.05);
+}
 
-    .service-image:hover {
-       transform: scale(1.05);
-       transition: 0.10s ease;
-   }
-   
-   .service-section .service .feedback{
-      line-height: 15px;
-      margin-bottom: 15px;
-   }
+.service-section .service .name {
+    margin-top: 10px;
+    font-weight: bold;
+    font-size: var(--font-size-m);
+    color: var(--secondary-color); /* Kulay para sa service name */
+}
 
-   .service-section .swiper-pagination-bullet{ /* Dots sa baba ng images sa services */
-      width: 10px;
-      height: 10px;
-      opacity: 1;
-      background: var(--secondary-color);
-   }
+.service-section .service .feedback {
+    line-height: 1.6; /* Mas madaling basahin pag 1.6 */
+    font-size: 0.9rem;
+    opacity: 0.9;
+    margin-bottom: 10px;
+    max-width: 250px; /* Para hindi masyadong malapad ang text */
+}
 
-   .service-section .swiper-slide-button{ /*color of <,> */
-      color: var(--secondary-color);
-   }
+/* SWIPER CONTROLS */
+.service-section .swiper-pagination-bullet {
+    width: 12px;
+    height: 12px;
+    background: var(--secondary-color);
+    opacity: 0.5;
+}
 
-   .service-section .swiper-slide-button:hover{ /*for swiper slides animation */
-       margin-top: -50px; 
-       color: var(--dark-color);
-       transition: 0.3s ease;
-   }
+.service-section .swiper-pagination-bullet-active {
+    opacity: 1;
+    background: var(--secondary-color);
+}
+
+.service-section .swiper-slide-button {
+    color: var(--secondary-color);
+    transition: all 0.3s ease;
+}
+
+/* Inalis ang margin-top: -50px sa hover para hindi tumalon ang button */
+.service-section .swiper-slide-button:hover {
+    color: var(--white-color);
+    transform: scale(1.2);
+}
 
    /*Profile Section Styling */
    /* Pinterest / Masonry */
