@@ -315,61 +315,58 @@ header .navbar { /* position of Home, About, Products, Parts & Services, contact
   margin-bottom: 80px;
 }
 
-/* SLIDER WRAPPER */
-.product-slider {
-  width: 100%;
-  overflow: hidden;
-  padding: 20px 0;
-}
-
-/* MOVING TRACK */
-.slider-track {
-  display: flex;
-  gap: 20px;
-  width: max-content;
-  animation: scroll 25s linear infinite;
-}
-
-/* PRODUCT CARD */
 .product-card {
   flex: 0 0 280px;
-  background: rgba(0, 0, 0, 0.7);
-  border-radius: 20px;
-  /* Tanggalin ang padding dito para sumagad ang image */
-  padding: 0; 
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 15px;
+  padding: 20px; /* Ginawang 20px mula 30px para hindi masyadong malaki ang kinakain na space */
   text-align: center;
-  transition: all 0.4s ease;
-  overflow: hidden; /* Importante ito para sumunod ang image sa border-radius */
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  /* Dito natin idadagdag ang scale para lumaki ang container */
+  transition: transform 0.4s ease, box-shadow 0.4s ease; 
+  overflow: hidden; /* Para hindi lumampas ang image pag lumaki */
 }
 
-/* IMAGE - Para mag-fit sa container */
+/* IMAGE - Katamtamang laki at fit */
 .product-card img {
-  width: 100%; /* Sasagad ito sa gilid ng container */
-  height: 200px; /* Pwedeng i-adjust depende sa gusto mong haba */
-  object-fit: cover; /* "Cover" para walang putol na background, or "fill" kung gusto mo saktong sakto */
-  display: block; /* Tinatanggal ang extra space sa ilalim ng image */
+  width: 95%; /* Hindi sagad na sagad, para may konting gap */
+  height: 160px; /* Binabaan natin para maging "katamtaman" lang */
+  object-fit: contain; /* Para siguradong buo ang truck at hindi putol ang gilid */
+  border-radius: 10px;
   transition: transform 0.4s ease;
+  margin: 0 auto; /* Center ang image */
 }
 
-/* TEXT CONTAINER - Dito natin ilalagay ang padding */
-.product-card .card-content {
-  padding: 20px; /* Dito na ang space para sa text para hindi dikit sa gilid */
-}
-
+/* TEXT */
 .product-card .text {
-  font-size: 0.85rem;
+  font-size: 0.85rem; /* Mas maliit nang konti para mag-fit ang content */
+  margin-top: 15px;
+  opacity: 0.85;
   line-height: 1.4;
-  opacity: 0.9;
-  color: #fff;
-  margin-top: 10px;
 }
 
-/* HOVER EFFECT */
+/* HOVER EFFECT - Sabay na lalaki ang container at aangat */
 .product-card:hover {
-  transform: translateY(-10px) scale(1.05); /* Lalaki ang buong container */
-  box-shadow: 0 15px 35px rgba(0,0,0,0.6);
+  /* translateY para umangat, scale(1.05) para lumaki ang container ng 5% */
+  transform: translateY(-10px) scale(1.05); 
+  box-shadow: 0 10px 25px rgba(0,0,0,0.4);
 }
+
+.product-card:hover img {
+  /* Katamtamang laki lang ng image sa loob (5% zoom) */
+  transform: scale(1.05); 
+}
+
+/* PANATILIHIN ANG IYONG ORIGINAL ANIMATION SA IBABA */
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.product-slider:hover .slider-track {
+  animation-play-state: paused;
+}
+
+
   /*Service section styling */
   .service-section {
        min-height: 100vh;
