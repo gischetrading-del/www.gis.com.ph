@@ -412,9 +412,9 @@ header .navbar { /* position of Home, About, Products, Parts & Services, contact
   }
 
    .service-section .service .service-image {
-      margin-top: 0px;
-      width: 80%;
-      height: 20%;
+      margin-top: 0.5px;
+      width: 70%;
+      height: 10%;
       object-fit: contain;
       margin-bottom: 20px;
       border-radius: var(--border-radius-m); /*border for images */
