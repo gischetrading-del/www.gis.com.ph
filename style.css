@@ -1,6 +1,11 @@
-/* importing Google fonts */
+/* =======================
+   IMPORT FONTS
+======================= */
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Purple+Purse&display=swap');
 
+/* =======================
+   RESET
+======================= */
 * {
   margin: 0;
   padding: 0;
@@ -8,8 +13,19 @@
   font-family: "Open Sans", sans-serif;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+img {
+  width: 100%;
+  display: block;
+}
+
+/* =======================
+   ROOT VARIABLES
+======================= */
 :root {
-  /* colors */
   --white-color: #fff;
   --dark-color: #252525;
   --primary-color: #126180;
@@ -19,7 +35,6 @@
   --third-color: #f5fbfd;
   --products-background-color: #F5F5F5;
 
-  /* font sizes */
   --font-size-s: 0.9rem;
   --font-size-n: 1rem;
   --font-size-m: 1.12rem;
@@ -27,70 +42,31 @@
   --font-size-xl: 2rem;
   --font-size-xxl: 2.5rem;
 
-  /* font weight */
-  --font-weight-normal: 400;
-  --font-weight-medium: 500;
-  --font-weight-semibold: 600;
-  --font-weight-bold: 700;
-
-  /* border radius */
   --border-radius-s: 8px;
   --border-radius-m: 30px;
   --border-radius-circle: 50%;
 
-  /* site width */
-  --site-max-width: 2000px;
+  --site-max-width: 1400px;
 }
 
-/* smooth scroll + FIX navbar overlap */
-html {
-  scroll-behavior: smooth;
-  scroll-padding-top: 80px;
-}
-
-section {
-  scroll-margin-top: 80px;
-}
-
-/* GLOBAL */
+/* =======================
+   GENERAL
+======================= */
 ul { list-style: none; }
 a { text-decoration: none; }
+button { cursor: pointer; border: none; background: none; }
 
-button {
-  cursor: pointer;
-  border: none;
-  background: none;
-}
-
-img {
-  width: 100%;
-}
-
-/* NAV LOGO */
-.nav-logo {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.nav-logo img {
-  width: 70px;
-  height: auto;
-}
-
-/* SECTION WRAPPER */
 .section-content {
-  margin: 0 auto;
-  padding: 0 10px;
   max-width: var(--site-max-width);
-  overflow: visible;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
 .section-title {
   text-align: center;
-  padding: 60px 0;
-  text-transform: uppercase;
   font-size: var(--font-size-xl);
+  text-transform: uppercase;
+  padding: 60px 0 40px;
 }
 
 .section-title::after {
@@ -103,25 +79,31 @@ img {
   border-radius: var(--border-radius-s);
 }
 
-/* HEADER */
+/* =======================
+   NAVBAR
+======================= */
 header {
   position: fixed;
   width: 100%;
   z-index: 5;
   background: var(--primary-color);
-  height: 80px;
 }
 
 header .navbar {
   display: flex;
-  padding: 10px;
   align-items: center;
   justify-content: space-between;
+  padding: 10px 20px;
 }
 
-.navbar .nav-logo .logo-text {
-  color: var(--white-color);
-  font-size: var(--font-size-xl);
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav-logo img {
+  width: 70px;
 }
 
 .navbar .nav-menu {
@@ -132,163 +114,151 @@ header .navbar {
 .navbar .nav-menu .nav-link {
   padding: 10px 18px;
   color: var(--white-color);
-  font-size: var(--font-size-m);
   border-radius: var(--border-radius-m);
-  transition: 0.4s ease;
+  transition: 0.3s ease;
 }
 
 .navbar .nav-menu .nav-link:hover {
   background: var(--secondary-color);
-  color: var(--white-color);
 }
 
-.navbar :where(#menu-close-button, #menu-open-button) {
-  display: none;
-}
-
-/* HERO SECTION (FIXED - NO DUPLICATE) */
+/* =======================
+   HERO
+======================= */
 .hero-section {
   min-height: 100vh;
+  background: url('images/office.jpg') center/cover fixed;
   position: relative;
-  overflow: hidden;
-  width: 100%;
-  background-image: url('images/office.jpg');
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
 }
 
 .hero-section::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.3);
-  z-index: 1;
+  background: rgba(0,0,0,0.4);
 }
 
 .hero-section .section-content {
-  display: flex;
-  align-items: center;
-  min-height: 100vh;
-  color: var(--white-color);
-  justify-content: space-between;
   position: relative;
   z-index: 2;
-}
-
-.hero-section .hero-details .title {
-  max-width: 70%;
-  margin: 24px 0 40px;
-  font-size: var(--font-size-xxl);
-  font-family: "Purple Purse";
+  color: var(--white-color);
   text-align: center;
 }
 
-.hero-section .hero-details .description {
-  max-width: 50%;
-  margin: 24px 0 40px;
-  font-size: var(--font-size-m);
+.hero-details .title {
+  font-size: var(--font-size-xxl);
+  font-family: "Purple Purse";
+  margin-bottom: 20px;
 }
 
-.hero-section .hero-details .button {
-  padding: 10px 26px;
-  border-radius: var(--border-radius-m);
+.hero-details .description {
+  max-width: 600px;
+  margin: 0 auto 30px;
+}
+
+.hero-details .button {
+  padding: 12px 26px;
   background: var(--secondary-color);
+  border-radius: var(--border-radius-m);
   color: var(--primary-color);
-  font-weight: var(--font-weight-medium);
+  font-weight: 600;
   transition: 0.3s ease;
 }
 
-.hero-section .hero-details .button:hover {
+.hero-details .button:hover {
   background: transparent;
-  border: 2px solid var(--dark-color);
-  color: var(--dark-color);
+  border: 2px solid var(--white-color);
+  color: var(--white-color);
 }
 
-/* PRODUCTS */
+/* =======================
+   PRODUCT SECTION (FIXED BIG CARDS)
+======================= */
 .product-section {
   min-height: 100vh;
-  padding: 3% 0 2%;
-  position: relative;
-  overflow: hidden;
-  color: var(--white-color);
+  padding: 80px 20px;
   background: url('images/bg.jpg') center/cover no-repeat;
+  color: var(--white-color);
 }
 
 .product-slider {
-  width: 100%;
   overflow: hidden;
   padding: 20px 0;
 }
 
 .slider-track {
   display: flex;
-  gap: 20px;
+  gap: 30px;
   width: max-content;
   animation: scroll 25s linear infinite;
 }
 
+/* 🔥 FIXED PRODUCT CARD SIZE */
 .product-card {
-  flex: 0 0 280px;
-  background: rgba(0,0,0,0.6);
-  border-radius: 15px;
-  padding: 30px;
+  flex: 0 0 340px;
+  background: rgba(0,0,0,0.65);
+  border-radius: 18px;
+  padding: 18px;
   text-align: center;
-  transition: 0.4s ease;
+  transition: 0.3s ease;
 }
 
 .product-card img {
-  height: 180px;
+  height: 240px;
   object-fit: cover;
-  border-radius: 10px;
-  transition: 0.4s ease;
+  border-radius: 12px;
+}
+
+.product-card .text {
+  margin-top: 12px;
+  font-size: 0.95rem;
+  opacity: 0.9;
 }
 
 .product-card:hover {
   transform: translateY(-10px);
 }
 
-.product-card:hover img {
-  transform: scale(1.08);
-}
-
+/* SCROLL */
 @keyframes scroll {
   0% { transform: translateX(0); }
   100% { transform: translateX(-50%); }
 }
 
-.product-slider:hover .slider-track {
-  animation-play-state: paused;
-}
-
-/* SERVICE */
+/* =======================
+   SERVICE SECTION (CLEANED)
+======================= */
 .service-section {
   min-height: 100vh;
-  padding: 3% 0 2%;
-  position: relative;
-  color: var(--white-color);
+  padding: 80px 20px;
   background: url('images/sbg.jpg') center/cover no-repeat;
+  color: var(--white-color);
 }
 
 .service-section .service {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   text-align: center;
-  gap: 5px;
+  padding: 20px;
 }
 
-.service-section .service .service-image {
+.service-section .service-image {
   width: 60%;
-  height: auto;
-  object-fit: cover;
   border-radius: var(--border-radius-m);
+  transition: 0.3s ease;
 }
 
-/* PROFILE */
+.service-section .service-image:hover {
+  transform: scale(1.05);
+}
+
+/* =======================
+   PROFILE SECTION
+======================= */
 .profile-section {
   min-height: 100vh;
   background: var(--medium-gray-color);
+  padding: 80px 20px;
 }
 
 .profile-gallery {
@@ -296,17 +266,62 @@ header .navbar {
   column-gap: 15px;
 }
 
-/* CONTACT (UNCHANGED AS REQUESTED) */
-/* untouched */
-
-/* FOOTER */
-.footer-section {
-  padding: 20px 0;
-  background: var(--dark-color);
+.profile-item {
+  margin-bottom: 15px;
+  border-radius: 14px;
+  overflow: hidden;
+  transition: 0.3s ease;
 }
 
-.footer-section .section-content {
+.profile-item:hover {
+  transform: translateY(-5px);
+}
+
+/* =======================
+   CONTACT SECTION
+======================= */
+.contact-section {
+  min-height: 100vh;
+  background: var(--light-pink-color);
+  padding: 80px 20px;
+}
+
+.contact-section .section-content {
+  display: flex;
+  gap: 40px;
+  justify-content: space-between;
+}
+
+/* =======================
+   FOOTER
+======================= */
+.footer-section {
+  background: var(--dark-color);
+  padding: 20px;
+  color: var(--white-color);
   display: flex;
   justify-content: space-between;
-  align-items: center;
+}
+
+/* =======================
+   RESPONSIVE
+======================= */
+@media (max-width: 900px) {
+  .contact-section .section-content {
+    flex-direction: column;
+  }
+
+  .profile-gallery {
+    column-count: 2;
+  }
+}
+
+@media (max-width: 640px) {
+  .profile-gallery {
+    column-count: 1;
+  }
+
+  .slider-track {
+    animation: none;
+  }
 }
