@@ -17,9 +17,15 @@ html {
   scroll-behavior: smooth;
 }
 
+body {
+  line-height: 1.6;
+  color: var(--dark-color);
+}
+
 img {
   width: 100%;
   display: block;
+  object-fit: cover;
 }
 
 /* =======================
@@ -37,23 +43,23 @@ img {
 
   --font-size-s: 0.9rem;
   --font-size-n: 1rem;
-  --font-size-m: 1.12rem;
+  --font-size-m: 1.125rem;
   --font-size-l: 1.5rem;
   --font-size-xl: 2rem;
   --font-size-xxl: 2.5rem;
 
   --border-radius-s: 8px;
-  --border-radius-m: 30px;
+  --border-radius-m: 24px;
   --border-radius-circle: 50%;
 
-  --site-max-width: 1400px;
+  --site-max-width: 1200px;
 }
 
 /* =======================
-   GENERAL
+   GLOBAL UTILITIES
 ======================= */
 ul { list-style: none; }
-a { text-decoration: none; }
+a { text-decoration: none; color: inherit; }
 button { cursor: pointer; border: none; background: none; }
 
 .section-content {
@@ -66,16 +72,17 @@ button { cursor: pointer; border: none; background: none; }
   text-align: center;
   font-size: var(--font-size-xl);
   text-transform: uppercase;
-  padding: 60px 0 40px;
+  margin-bottom: 50px;
+  position: relative;
 }
 
 .section-title::after {
   content: "";
-  width: 80px;
-  height: 5px;
+  width: 70px;
+  height: 4px;
   display: block;
   background: var(--secondary-color);
-  margin: 10px auto 0;
+  margin: 12px auto 0;
   border-radius: var(--border-radius-s);
 }
 
@@ -84,16 +91,19 @@ button { cursor: pointer; border: none; background: none; }
 ======================= */
 header {
   position: fixed;
+  top: 0;
   width: 100%;
-  z-index: 5;
+  z-index: 1000;
   background: var(--primary-color);
 }
 
 header .navbar {
+  max-width: var(--site-max-width);
+  margin: auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 10px 20px;
+  padding: 12px 20px;
 }
 
 .nav-logo {
@@ -103,19 +113,20 @@ header .navbar {
 }
 
 .nav-logo img {
-  width: 70px;
+  width: 65px;
 }
 
 .navbar .nav-menu {
   display: flex;
-  gap: 10px;
+  gap: 12px;
 }
 
 .navbar .nav-menu .nav-link {
-  padding: 10px 18px;
+  padding: 10px 16px;
   color: var(--white-color);
   border-radius: var(--border-radius-m);
   transition: 0.3s ease;
+  font-size: var(--font-size-s);
 }
 
 .navbar .nav-menu .nav-link:hover {
@@ -127,39 +138,42 @@ header .navbar {
 ======================= */
 .hero-section {
   min-height: 100vh;
-  background: url('images/office.jpg') center/cover fixed;
-  position: relative;
+  background: url('images/office.jpg') center/cover no-repeat fixed;
   display: flex;
   align-items: center;
+  position: relative;
+  padding-top: 80px;
 }
 
 .hero-section::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.4);
+  background: rgba(0,0,0,0.5);
 }
 
 .hero-section .section-content {
   position: relative;
   z-index: 2;
-  color: var(--white-color);
   text-align: center;
+  color: var(--white-color);
 }
 
 .hero-details .title {
   font-size: var(--font-size-xxl);
-  font-family: "Purple Purse";
+  font-family: "Purple Purse", cursive;
   margin-bottom: 20px;
 }
 
 .hero-details .description {
   max-width: 600px;
   margin: 0 auto 30px;
+  font-size: var(--font-size-n);
 }
 
 .hero-details .button {
-  padding: 12px 26px;
+  display: inline-block;
+  padding: 12px 28px;
   background: var(--secondary-color);
   border-radius: var(--border-radius-m);
   color: var(--primary-color);
@@ -174,11 +188,11 @@ header .navbar {
 }
 
 /* =======================
-   PRODUCT SECTION (FIXED BIG CARDS)
+   PRODUCT SECTION
 ======================= */
 .product-section {
   min-height: 100vh;
-  padding: 80px 20px;
+  padding: 100px 20px;
   background: url('images/bg.jpg') center/cover no-repeat;
   color: var(--white-color);
 }
@@ -190,66 +204,64 @@ header .navbar {
 
 .slider-track {
   display: flex;
-  gap: 30px;
+  gap: 25px;
   width: max-content;
-  animation: scroll 25s linear infinite;
+  animation: scroll 30s linear infinite;
 }
 
-/* 🔥 FIXED PRODUCT CARD SIZE */
 .product-card {
-  flex: 0 0 340px;
-  background: rgba(0,0,0,0.65);
-  border-radius: 18px;
+  flex: 0 0 320px;
+  background: rgba(0,0,0,0.7);
+  border-radius: 16px;
   padding: 18px;
   text-align: center;
   transition: 0.3s ease;
 }
 
 .product-card img {
-  height: 240px;
-  object-fit: cover;
+  height: 220px;
   border-radius: 12px;
 }
 
 .product-card .text {
   margin-top: 12px;
-  font-size: 0.95rem;
+  font-size: var(--font-size-s);
   opacity: 0.9;
 }
 
 .product-card:hover {
-  transform: translateY(-10px);
+  transform: translateY(-8px);
 }
 
-/* SCROLL */
+/* SCROLL ANIMATION */
 @keyframes scroll {
   0% { transform: translateX(0); }
   100% { transform: translateX(-50%); }
 }
 
 /* =======================
-   SERVICE SECTION (CLEANED)
+   SERVICE SECTION
 ======================= */
 .service-section {
   min-height: 100vh;
-  padding: 80px 20px;
+  padding: 100px 20px;
   background: url('images/sbg.jpg') center/cover no-repeat;
   color: var(--white-color);
 }
 
 .service-section .service {
   text-align: center;
-  padding: 20px;
+  margin-bottom: 30px;
 }
 
 .service-section .service-image {
-  width: 60%;
+  width: 55%;
   border-radius: var(--border-radius-m);
   transition: 0.3s ease;
 }
 
 .service-section .service-image:hover {
-  transform: scale(1.05);
+  transform: scale(1.04);
 }
 
 /* =======================
@@ -258,7 +270,7 @@ header .navbar {
 .profile-section {
   min-height: 100vh;
   background: var(--medium-gray-color);
-  padding: 80px 20px;
+  padding: 100px 20px;
 }
 
 .profile-gallery {
@@ -268,7 +280,7 @@ header .navbar {
 
 .profile-item {
   margin-bottom: 15px;
-  border-radius: 14px;
+  border-radius: 12px;
   overflow: hidden;
   transition: 0.3s ease;
 }
@@ -283,13 +295,14 @@ header .navbar {
 .contact-section {
   min-height: 100vh;
   background: var(--light-pink-color);
-  padding: 80px 20px;
+  padding: 100px 20px;
 }
 
 .contact-section .section-content {
   display: flex;
   gap: 40px;
   justify-content: space-between;
+  align-items: flex-start;
 }
 
 /* =======================
@@ -297,10 +310,12 @@ header .navbar {
 ======================= */
 .footer-section {
   background: var(--dark-color);
-  padding: 20px;
   color: var(--white-color);
+  padding: 20px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  font-size: var(--font-size-s);
 }
 
 /* =======================
@@ -323,5 +338,9 @@ header .navbar {
 
   .slider-track {
     animation: none;
+  }
+
+  .service-section .service-image {
+    width: 100%;
   }
 }
