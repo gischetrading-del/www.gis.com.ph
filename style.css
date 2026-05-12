@@ -332,56 +332,56 @@ header .navbar { /* position of Home, About, Products, Parts & Services, contact
 
 /* PRODUCT CARD */
 .product-card {
-   flex: 0 0 300px;
-  background: rgba(0, 0, 0, 0.6);
+  flex: 0 0 280px;
+  background: rgba(0, 0, 0, 0.7); /* Mas dark nang konti para mas lutang ang text */
   border-radius: 20px;
-  padding: 20px; /* binawasan */
+  padding: 20px; /* Binawasan para hindi masyadong malapad ang spacing */
   text-align: center;
-  overflow: hidden;
-  transition: 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); /* Smoother transition */
+  overflow: hidden; /* Para hindi lumabas ang image sa border pag nag-scale */
+  border: 1px solid rgba(255, 255, 255, 0.1); /* Subtle border para sa modern look */
 }
 
-/* IMAGE */
+/* IMAGE - Eto ang adjustment para maging katamtaman ang laki */
 .product-card img {
-  width: 100%;
-  height: 220px; /* mas ok na height */
-  object-fit: cover; /* hindi na puputol weird */
-  border-radius: 15px; /* hindi sobrang bilog */
-  display: block;
+  width: 85%; /* Hindi sagad sa gilid para may "breathable space" */
+  height: auto; /* Maintain aspect ratio */
+  aspect-ratio: 4 / 3; /* Uniform na laki para sa lahat ng images */
+  object-fit: contain; /* Para hindi ma-crop ang mga truck/machinery */
+  border-radius: 12px;
+  margin-bottom: 15px;
+  transition: transform 0.4s ease;
 }
 
 /* TEXT */
-.product-card .text {
-  font-size: 0.9rem;
-  margin-top: 10px;
-  opacity: 0.85;
+.product-card h3 {
+  font-size: 1.1rem;
+  color: #ff9800; /* Contrast color para sa title */
+  margin-bottom: 8px;
+  text-transform: uppercase;
 }
 
-/* HOVER EFFECT */
+.product-card .text {
+  font-size: 0.85rem;
+  line-height: 1.4;
+  opacity: 0.9;
+  color: #fff;
+}
+
+/* HOVER EFFECT - "Katamtamang" paglaki ng container */
 .product-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+  transform: translateY(-8px) scale(1.03); /* Swabeng pag-angat at paglaki */
+  background: rgba(0, 0, 0, 0.85);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+  border-color: rgba(255, 152, 0, 0.5); /* Light glow effect sa border */
 }
 
 .product-card:hover img {
-  transform: scale(1.08);
+  transform: scale(1.05); /* Konting zoom lang sa image */
 }
-
-/* AUTO SCROLL ANIMATION */
-@keyframes scroll {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
-}
-
-/* PAUSE ON HOVER */
-.product-slider:hover .slider-track {
-  animation-play-state: paused;
-}
-
   /*Service section styling */
   .service-section {
        min-height: 100vh;
