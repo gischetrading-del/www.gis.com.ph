@@ -325,7 +325,7 @@ header .navbar { /* position of Home, About, Products, Parts & Services, contact
 /* MOVING TRACK */
 .slider-track {
   display: flex;
-  gap: 20px;
+  gap: 30px;
   width: 100%;
   animation: scroll 25s linear infinite;
 }
