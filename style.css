@@ -332,21 +332,22 @@ header .navbar { /* position of Home, About, Products, Parts & Services, contact
 
 /* PRODUCT CARD */
 .product-card {
-  flex: 0 0 280px;
+   flex: 0 0 300px;
   background: rgba(0, 0, 0, 0.6);
-  border-radius: 25px;
-  padding: 40px;
+  border-radius: 20px;
+  padding: 20px; /* binawasan */
   text-align: center;
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  overflow: hidden;
+  transition: 0.3s ease;
 }
 
 /* IMAGE */
 .product-card img {
   width: 100%;
-  height: 180px;
-  object-fit: cover;
-  border-radius: 40px;
-  transition: transform 0.4s ease;
+  height: 220px; /* mas ok na height */
+  object-fit: cover; /* hindi na puputol weird */
+  border-radius: 15px; /* hindi sobrang bilog */
+  display: block;
 }
 
 /* TEXT */
